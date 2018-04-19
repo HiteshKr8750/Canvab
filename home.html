@@ -8,28 +8,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <style type="text/css">
-    /* The sticky class is added to the header with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 102px;
-}
-
-  </style>
 </head>
 
 <body >
-
-
-<nav class="navbar navbar-inverse navbar-fixed-top navbar-default" >
-  
-  <div class="container" id="top-bar">
+ 
+  <div class="container-fluid bg-color-dark" id="top-bar" ">
     <div class="float-left">
       <div class="phone-topbar">
         <p class="">Help +1 123 456 78 90</p>
@@ -37,19 +20,28 @@
     </div>
 </div>
 
+<div class="navbar navbar-inverse  navbar-default" id="top"  data-spy="affix" data-offset-top="100" >
+ 
+
     <div class="navbar-header" id="">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button type="button" id="toggle-btn" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <div id="humburger" >
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>  
+        </div>
+
+         <div id="navbar-close" class="hidden text-white">
+          <span class="glyphicon glyphicon-remove"></span>
+        </div>                      
       </button>
       <a class="navbar-brand logo" href="#">CANVAB</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">        
-        <li class="dropdown">
+    <div class="collapse navbar-collapse " id="myNavbar">
+      <ul class="nav navbar-nav ">        
+        <li class="dropdown ">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Home <span class="caret"></span></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu ">
             <li><a href="#">Home Default</a></li>
             <li><a href="#">Home Text-Typed</a></li>
             <li><a href="#">Home Text-Rotate</a></li>
@@ -70,9 +62,9 @@
       </ul>
     </div>
       </div>
-      </nav>
+      </div>
 <!-- section first -->
-<section class="home-bg-color mt-5" style="margin-top: 50px;">
+<section class="home-bg-color">
 <div class="container">
 <div class="row justify-content-center">
 <div class="text-center text-white"> 
@@ -82,30 +74,37 @@
  <button type="button" class="btn btn-custom">Free Signup</button>
 </div>
 <div class="">
-  <img src="images/macbook.png" alt="" class="img-fluid center-block home-dashboard">
+  <img src="macbook.png" alt="" class="img-fluid center-block home-dashboard">
 </div>
 </div>
 </div>
 </div>
-</section>
-<!-- <script type="text/javascript">
-  // When the user scrolls the page, execute myFunction
+<!-- script for toggle button chane on close -->
+<script type="text/javascript">
+  $(function() {
+  $('#toggle-btn').click(function() {
+    $('#humburger').toggleClass('hidden');
+    $('#navbar-close').toggleClass('hidden');  
+  });
+});
+</script>
+
+
+<script>
 window.onscroll = function() {myFunction()};
 
-// Get the header
-var header = document.getElementById("myHeader");
+var navbar = document.getElementById("top");
+var sticky = navbar.offsetTop;
 
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
   if (window.pageYOffset >= sticky) {
-    header.classList.add("sticky");
+    navbar.classList.add("sticky")
   } else {
-    header.classList.remove("sticky");
+    navbar.classList.remove("sticky");
   }
-} 
-</script> -->
-</body>
+}
+</script>
+
+
+</section>
 </html>

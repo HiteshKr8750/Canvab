@@ -9,9 +9,7 @@
     font-size: 28px;
     margin-right: 41px;
 }
-/*.top-bar{
-  background-color: #2C2C2C;
-}*/
+
 .float-left{
   float: left !important;
 }
@@ -44,7 +42,7 @@
 .home-subtitle {
     color: #C0C0E2;
     font-size: 18px;
-    /*max-width: 750px;*/
+  
    margin-left: 20px;
 }
 .btn-custom {
@@ -69,8 +67,7 @@
     top: 80px;
 }
 
-  /* Note: Try to remove the following lines to see the effect of CSS positioning */
-  .affix {
+ .affix {
       top: 0;
       width: 100%;
       z-index: 9999 !important;
@@ -79,3 +76,23 @@
   .affix + .container-fluid {
       padding-top: 70px;
   }
+  .custom-dropdown{
+    background-color: #fff;
+  }
+  @media (max-width: 979px) {
+.navbar-collapse {
+background: white;
+}
+}
+.bg-color-dark{
+  background-color: #222222;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
